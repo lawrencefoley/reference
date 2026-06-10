@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<!-- Defines the document type and version of HTML (5) being used -->
+<html lang="en">
+<!-- The root element of the HTML document, with a language attribute -->
+<head>
+    <!-- Metadata and resources for the document -->
+    <meta charset="UTF-8">
+    <!-- Character encoding declaration for the document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ensures responsive design for different devices -->
+    <meta name="description" content="Comprehensive example of all HTML5 tags and attributes">
+    <!-- Provides a description of the document for search engines -->
+    <meta name="author" content="David Christian Liedle">
+    <!-- Indicates the author of the document -->
+    <meta name="keywords" content="HTML5, kitchen sink, tags, attributes">
+    <!-- Keywords for search engine optimization -->
+    <meta name="robots" content="index, follow">
+    <!-- Instructions for search engine crawlers -->
+    <meta property="og:title" content="HTML5 Kitchen Sink Example">
+    <!-- Open Graph metadata for social media sharing -->
+    <meta property="og:description" content="Comprehensive demonstration of HTML5 elements">
+    <!-- Open Graph description for social media -->
+    <meta property="og:type" content="website">
+    <!-- Open Graph content type -->
+    <title>HTML5 Kitchen Sink Example</title>
+    <!-- The title displayed in the browser tab -->
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <!-- Links an external stylesheet -->
+    <script src="script.js" defer></script>
+    <!-- Adds JavaScript functionality, deferring script execution -->
+    <base href="https://example.com/">
+    <!-- Sets the base URL for relative links in the document -->
+    <style>
+        body {
+            background-color: black;
+            color: green;
+            font-family: Arial, sans-serif;
+        }
+
+        a {
+            color: limegreen;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        header, footer {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid green;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #444;
+        }
+
+        tr:nth-child(even) {
+            background-color: #222;
+        }
+        
+        /* Additional styles for new HTML5 elements */
+        .highlight-box {
+            background-color: #2a2a2a;
+            border: 2px solid green;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .flex-item {
+            flex: 1;
+            min-width: 150px;
+            background-color: #333;
+            padding: 10px;
+            border-radius: 3px;
+        }
+        
+        datalist {
+            background-color: #333;
+        }
+        
+        .semantic-sections {
+            margin: 20px 0;
+        }
+        
+        time {
+            color: #90EE90;
+            font-weight: bold;
+        }
+        
+        kbd {
+            background-color: #555;
+            border: 1px solid #777;
+            border-radius: 3px;
+            padding: 2px 4px;
+            font-family: monospace;
+            color: white;
+        }
+        
+        samp {
+            background-color: #1a1a1a;
+            color: #90EE90;
+            font-family: monospace;
+            padding: 2px 4px;
+        }
+        
+        var {
+            color: #87CEEB;
+            font-style: italic;
+        }
+    </style>
+    <script>
+        // Basic form validation script
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.querySelector('form');
+            form.addEventListener('submit', function (event) {
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+
+                if (!name || !email) {
+                    alert('Please fill out all required fields.');
+                    event.preventDefault(); // Prevent form submission
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- Main content of the document starts here -->
+    <header>
+        <!-- Header section with navigation links -->
+        <nav>
+            <!-- Navigation block for site links -->
+            <ul>
+                <!-- List of navigation links -->
+                <li><a href="home.html" target="_self">Home</a></li>
+                <!-- Link to the home page -->
+                <li><a href="about.html" target="_blank">About</a></li>
+                <!-- Link to the about page, opens in a new tab -->
+                <li><a href="contact.html" target="_self">Contact</a></li>
+                <!-- Link to the contact page -->
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <!-- Main section for primary content -->
+        <article id="article-1" class="post" contenteditable="false" draggable="true">
+            <!-- An independent, self-contained article -->
+            <h1>Article Title</h1>
+            <!-- Primary heading for the article -->
+            <section>
+                <!-- A thematic grouping of content -->
+                <h2>Section Heading</h2>
+                <!-- Heading for this section -->
+                <p>Paragraph with <strong>bold text</strong>, <em>italic text</em>, <mark>highlighted text</mark>, and <a href="https://example.com" rel="nofollow" hreflang="en">a hyperlink</a>.</p>
+                <!-- A paragraph demonstrating various inline tags -->
+                <p>Here is a <abbr title="HyperText Markup Language">HTML</abbr> abbreviation and <cite>Citation Example</cite>.</p>
+                <!-- Example of abbreviation and citation tags -->
+                <figure>
+                    <!-- Container for a figure with a caption -->
+                    <img src="image.jpg" alt="Example Image" width="600" height="400" loading="lazy">
+                    <!-- Image with alt text, dimensions, and lazy loading -->
+                    <figcaption>Figure caption for the image.</figcaption>
+                    <!-- Caption describing the figure -->
+                </figure>
+            </section>
+            <aside>
+                <!-- Secondary content such as related links or advertisements -->
+                <h3>Sidebar</h3>
+                <p>Content for the sidebar, such as related links or additional information.</p>
+            </aside>
+        </article>
+
+        <form action="/submit" method="post" enctype="multipart/form-data">
+            <!-- Form for collecting user input -->
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required maxlength="100">
+            <!-- Text input field for name -->
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <!-- Email input field -->
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" minlength="8" required>
+            <!-- Password input field -->
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob">
+            <!-- Date input field -->
+
+            <label for="color">Favorite Color:</label>
+            <input type="color" id="color" name="color" value="#ff0000">
+            <!-- Color picker input field -->
+
+            <fieldset>
+                <!-- Grouping related form controls -->
+                <legend>Preferences</legend>
+                <!-- Label for the fieldset group -->
+                <label for="newsletter">Subscribe to Newsletter:</label>
+                <input type="checkbox" id="newsletter" name="newsletter">
+                <!-- Checkbox input field -->
+
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender">
+                    <!-- Dropdown selection -->
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </fieldset>
+
+            <button type="submit">Submit</button>
+            <!-- Submit button for the form -->
+        </form>
+
+        <table>
+            <!-- Table structure for tabular data -->
+            <caption>Sample Table</caption>
+            <!-- Caption describing the table -->
+            <thead>
+                <!-- Header section of the table -->
+                <tr>
+                    <th scope="col">Header 1</th>
+                    <th scope="col">Header 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Body section of the table -->
+                <tr>
+                    <td>Data 1</td>
+                    <td>Data 2</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <!-- Footer section of the table -->
+                <tr>
+                    <td colspan="2">Footer</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <audio controls>
+            <!-- Embeds an audio player -->
+            <source src="audio.mp3" type="audio/mpeg">
+            <!-- Source file for the audio player -->
+            Your browser does not support the audio tag.
+        </audio>
+
+        <video controls width="640" height="360" poster="poster.jpg">
+            <!-- Embeds a video player -->
+            <source src="video.mp4" type="video/mp4">
+            <!-- Source file for the video player -->
+            Your browser does not support the video tag.
+        </video>
+
+        <canvas id="drawingCanvas" width="500" height="500">
+            <!-- Fallback content for browsers that do not support the canvas element -->
+            Your browser does not support the canvas element. Please update your browser to view this content.
+        </canvas>
+        <!-- Canvas for rendering graphics -->
+
+        <progress value="70" max="100">70%</progress>
+        <!-- Progress bar indicating task completion -->
+
+        <meter value="2" min="0" max="10" low="3" high="7" optimum="5">2</meter>
+        <!-- Gauge showing a numeric measurement -->
+
+        <details open>
+            <!-- Expandable content section -->
+            <summary>Expandable Section</summary>
+            <p>Details about this section.</p>
+        </details>
+
+        <dialog open id="dialog">Dialog Example</dialog>
+        <!-- Dialog box for additional interaction -->
+
+        <blockquote cite="https://example.com/quote">This is a blockquote example.</blockquote>
+        <!-- Quoted content from another source -->
+
+        <pre>
+            Code block example
+        </pre>
+        <!-- Preformatted text block -->
+
+        <code>
+            &lt;div&gt;Sample Code&lt;/div&gt;
+        </code>
+        <!-- Inline code example -->
+
+        <output name="result">Result here</output>
+        <!-- Displays the result of a calculation or operation -->
+        
+        <!-- HTML5 Semantic Elements Section -->
+        <section class="semantic-sections">
+            <!-- Thematic grouping demonstrating semantic HTML5 elements -->
+            <h2>HTML5 Semantic Elements Demo</h2>
+            
+            <article>
+                <!-- Independent, self-contained content -->
+                <header>
+                    <!-- Header for this article -->
+                    <h3>Article with Semantic Structure</h3>
+                    <p>Published on <time datetime="2024-01-15T10:30:00Z">January 15, 2024 at 10:30 AM</time></p>
+                    <!-- Time element with machine-readable datetime -->
+                </header>
+                
+                <p>This article demonstrates various HTML5 semantic elements and text-level semantics.</p>
+                
+                <p>Here we have <small>small text</small>, <sub>subscript</sub>, <sup>superscript</sup>, and text with <ins>inserted content</ins> and <del>deleted content</del>.</p>
+                <!-- Small, subscript, superscript, insertion, and deletion elements -->
+                
+                <p>Technical terms: <dfn>HTML5</dfn> is the fifth major version of HTML. Use <kbd>Ctrl+C</kbd> to copy and <kbd>Ctrl+V</kbd> to paste.</p>
+                <!-- Definition term and keyboard input elements -->
+                
+                <p>Sample output: <samp>Process completed successfully</samp></p>
+                <!-- Sample program output element -->
+                
+                <p>Mathematical variable: <var>x</var> = <var>y</var> + <var>z</var></p>
+                <!-- Variable elements for mathematical expressions -->
+                
+                <p>Ruby annotation for pronunciation: <ruby>漢<rt>kan</rt>字<rt>ji</rt></ruby></p>
+                <!-- Ruby annotation for East Asian typography -->
+                
+                <p>Bidirectional text override: <bdo dir="rtl">This text goes right to left</bdo></p>
+                <!-- Bidirectional text override element -->
+                
+                <footer>
+                    <!-- Footer for this article -->
+                    <p><small>Article footer with additional information</small></p>
+                </footer>
+            </article>
+        </section>
+        
+        <!-- Advanced Form Elements Section -->
+        <section class="highlight-box">
+            <h2>Advanced HTML5 Form Elements</h2>
+            
+            <form action="/advanced-submit" method="post">
+                <!-- Advanced form demonstrating HTML5 input types -->
+                
+                <fieldset>
+                    <legend>Advanced Input Types</legend>
+                    
+                    <label for="range-input">Range Slider:</label>
+                    <input type="range" id="range-input" name="range" min="0" max="100" value="50" step="10">
+                    <!-- Range slider input -->
+                    
+                    <label for="number-input">Number Input:</label>
+                    <input type="number" id="number-input" name="number" min="1" max="10" step="0.5" value="5">
+                    <!-- Number input with constraints -->
+                    
+                    <label for="tel-input">Telephone:</label>
+                    <input type="tel" id="tel-input" name="telephone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890">
+                    <!-- Telephone input with pattern validation -->
+                    
+                    <label for="url-input">Website URL:</label>
+                    <input type="url" id="url-input" name="website" placeholder="https://example.com">
+                    <!-- URL input field -->
+                    
+                    <label for="search-input">Search:</label>
+                    <input type="search" id="search-input" name="search" placeholder="Search terms..." list="search-suggestions">
+                    <!-- Search input with datalist -->
+                    
+                    <datalist id="search-suggestions">
+                        <!-- Predefined options for search input -->
+                        <option value="HTML5">
+                        <option value="CSS3">
+                        <option value="JavaScript">
+                        <option value="Web Development">
+                    </datalist>
+                    
+                    <label for="file-input">File Upload:</label>
+                    <input type="file" id="file-input" name="files" multiple accept=".jpg,.png,.gif,.pdf">
+                    <!-- File input accepting multiple files with specific types -->
+                    
+                    <label for="hidden-input">Hidden Field:</label>
+                    <input type="hidden" id="hidden-input" name="hidden" value="secret-value">
+                    <!-- Hidden input field -->
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Text Areas and Selection</legend>
+                    
+                    <label for="textarea-field">Comments:</label>
+                    <textarea id="textarea-field" name="comments" rows="4" cols="50" placeholder="Enter your comments here..." maxlength="500"></textarea>
+                    <!-- Textarea with size and length constraints -->
+                    
+                    <label for="multiple-select">Multiple Selection:</label>
+                    <select id="multiple-select" name="technologies" multiple size="4">
+                        <!-- Multiple selection dropdown -->
+                        <optgroup label="Frontend">
+                            <!-- Grouped options -->
+                            <option value="html">HTML</option>
+                            <option value="css">CSS</option>
+                            <option value="js">JavaScript</option>
+                        </optgroup>
+                        <optgroup label="Backend">
+                            <option value="python">Python</option>
+                            <option value="java">Java</option>
+                            <option value="php">PHP</option>
+                        </optgroup>
+                    </select>
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Radio Buttons and Checkboxes</legend>
+                    
+                    <p>Choose your experience level:</p>
+                    <input type="radio" id="beginner" name="experience" value="beginner">
+                    <label for="beginner">Beginner</label>
+                    <!-- Radio button option -->
+                    
+                    <input type="radio" id="intermediate" name="experience" value="intermediate" checked>
+                    <label for="intermediate">Intermediate</label>
+                    <!-- Radio button option (default selected) -->
+                    
+                    <input type="radio" id="advanced" name="experience" value="advanced">
+                    <label for="advanced">Advanced</label>
+                    <!-- Radio button option -->
+                    
+                    <p>Select your interests:</p>
+                    <input type="checkbox" id="web-dev" name="interests" value="web-development">
+                    <label for="web-dev">Web Development</label>
+                    <!-- Checkbox option -->
+                    
+                    <input type="checkbox" id="mobile-dev" name="interests" value="mobile-development">
+                    <label for="mobile-dev">Mobile Development</label>
+                    <!-- Checkbox option -->
+                    
+                    <input type="checkbox" id="data-science" name="interests" value="data-science">
+                    <label for="data-science">Data Science</label>
+                    <!-- Checkbox option -->
+                </fieldset>
+                
+                <button type="submit" formaction="/custom-action" formmethod="post">Submit with Custom Action</button>
+                <!-- Submit button with custom form action and method -->
+                <button type="reset">Reset Form</button>
+                <!-- Reset button to clear form fields -->
+                <button type="button" onclick="alert('Button clicked!')">Custom Button</button>
+                <!-- Generic button with custom action -->
+            </form>
+        </section>
+        
+        <!-- Media and Embedded Content Section -->
+        <section class="highlight-box">
+            <h2>Media and Embedded Content</h2>
+            
+            <!-- Enhanced Audio Element -->
+            <h3>Audio with Multiple Sources</h3>
+            <audio controls preload="metadata" loop>
+                <!-- Audio player with enhanced attributes -->
+                <source src="audio.ogg" type="audio/ogg">
+                <!-- OGG audio source -->
+                <source src="audio.mp3" type="audio/mpeg">
+                <!-- MP3 audio source (fallback) -->
+                <track kind="captions" src="audio-captions.vtt" srclang="en" label="English Captions">
+                <!-- Text track for accessibility -->
+                Your browser does not support the audio element.
+            </audio>
+            
+            <!-- Enhanced Video Element -->
+            <h3>Video with Multiple Sources and Tracks</h3>
+            <video controls width="640" height="360" poster="poster.jpg" preload="metadata" muted>
+                <!-- Video player with enhanced attributes -->
+                <source src="video.webm" type="video/webm">
+                <!-- WebM video source -->
+                <source src="video.mp4" type="video/mp4">
+                <!-- MP4 video source (fallback) -->
+                <track kind="subtitles" src="video-en.vtt" srclang="en" label="English Subtitles" default>
+                <!-- English subtitle track -->
+                <track kind="subtitles" src="video-es.vtt" srclang="es" label="Spanish Subtitles">
+                <!-- Spanish subtitle track -->
+                <track kind="descriptions" src="video-desc.vtt" srclang="en" label="Audio Descriptions">
+                <!-- Audio description track for accessibility -->
+                Your browser does not support the video element.
+            </video>
+            
+            <!-- Object and Embed Elements -->
+            <h3>Object and Embed Elements</h3>
+            <object data="document.pdf" type="application/pdf" width="400" height="300">
+                <!-- Object element for embedding PDF -->
+                <p>Your browser does not support PDF embedding. <a href="document.pdf">Download the PDF</a></p>
+            </object>
+            
+            <embed src="flash-content.swf" type="application/x-shockwave-flash" width="400" height="300">
+            <!-- Embed element for Flash content (legacy) -->
+        </section>
+        
+        <!-- Interactive Elements Section -->
+        <section class="highlight-box">
+            <h2>Interactive HTML5 Elements</h2>
+            
+            <!-- Details and Summary -->
+            <details>
+                <!-- Collapsible content section -->
+                <summary>Click to expand: Advanced Canvas Example</summary>
+                <p>This section contains detailed information about HTML5 Canvas capabilities.</p>
+                <canvas id="advancedCanvas" width="400" height="200">
+                    <!-- Canvas for advanced graphics -->
+                    Your browser does not support the Canvas element.
+                </canvas>
+                <script>
+                    // Advanced canvas drawing script
+                    const canvas = document.getElementById('advancedCanvas');
+                    if (canvas && canvas.getContext) {
+                        const ctx = canvas.getContext('2d');
+                        
+                        // Draw gradient background
+                        const gradient = ctx.createLinearGradient(0, 0, 400, 200);
+                        gradient.addColorStop(0, '#000000');
+                        gradient.addColorStop(1, '#006600');
+                        ctx.fillStyle = gradient;
+                        ctx.fillRect(0, 0, 400, 200);
+                        
+                        // Draw shapes
+                        ctx.fillStyle = '#00FF00';
+                        ctx.fillRect(50, 50, 100, 75);
+                        
+                        ctx.beginPath();
+                        ctx.arc(300, 100, 50, 0, 2 * Math.PI);
+                        ctx.fillStyle = '#90EE90';
+                        ctx.fill();
+                        
+                        // Draw text
+                        ctx.fillStyle = '#FFFFFF';
+                        ctx.font = '16px Arial';
+                        ctx.fillText('HTML5 Canvas Demo', 10, 30);
+                    }
+                </script>
+            </details>
+            
+            <!-- Dialog Element -->
+            <dialog id="modal-dialog">
+                <!-- Modal dialog element -->
+                <h3>Modal Dialog Example</h3>
+                <p>This is a native HTML5 dialog element.</p>
+                <form method="dialog">
+                    <button type="submit" value="close">Close Dialog</button>
+                </form>
+            </dialog>
+            
+            <button onclick="document.getElementById('modal-dialog').showModal()">Open Modal Dialog</button>
+            <!-- Button to open the modal dialog -->
+            
+            <!-- Progress and Meter Elements -->
+            <h3>Progress and Measurement Elements</h3>
+            <label for="file-progress">File Upload Progress:</label>
+            <progress id="file-progress" value="32" max="100">32%</progress>
+            <!-- Progress bar showing completion -->
+            
+            <label for="disk-usage">Disk Usage:</label>
+            <meter id="disk-usage" value="6" min="0" max="10" low="2" high="8" optimum="4">6 out of 10</meter>
+            <!-- Meter showing measurement with optimal range -->
+            
+            <label for="temperature">Temperature:</label>
+            <meter id="temperature" value="25" min="-10" max="50" low="10" high="35" optimum="20">25°C</meter>
+            <!-- Temperature meter with different optimal range -->
+        </section>
+        
+        <!-- Layout Demonstration Section -->
+        <section class="highlight-box">
+            <h2>CSS Grid and Flexbox Layout Demos</h2>
+            
+            <h3>CSS Grid Layout</h3>
+            <div class="grid-container">
+                <!-- CSS Grid container -->
+                <div class="highlight-box">Grid Item 1</div>
+                <div class="highlight-box">Grid Item 2</div>
+                <div class="highlight-box">Grid Item 3</div>
+                <div class="highlight-box">Grid Item 4</div>
+            </div>
+            
+            <h3>Flexbox Layout</h3>
+            <div class="flex-container">
+                <!-- Flexbox container -->
+                <div class="flex-item">Flex Item 1</div>
+                <div class="flex-item">Flex Item 2</div>
+                <div class="flex-item">Flex Item 3</div>
+            </div>
+        </section>
+        
+        <!-- Data and Lists Section -->
+        <section class="highlight-box">
+            <h2>Lists and Data Structures</h2>
+            
+            <!-- Description List -->
+            <h3>Description List</h3>
+            <dl>
+                <!-- Description list for term-definition pairs -->
+                <dt>HTML</dt>
+                <!-- Term being described -->
+                <dd>HyperText Markup Language - the standard markup language for web pages</dd>
+                <!-- Description of the term -->
+                
+                <dt>CSS</dt>
+                <dd>Cascading Style Sheets - used for styling HTML elements</dd>
+                
+                <dt>JavaScript</dt>
+                <dd>Programming language that enables interactive web pages</dd>
+            </dl>
+            
+            <!-- Ordered List with Different Types -->
+            <h3>Ordered Lists with Different Numbering</h3>
+            <ol type="1">
+                <!-- Ordered list with decimal numbers -->
+                <li>First item (decimal)</li>
+                <li>Second item</li>
+                <li>Third item</li>
+            </ol>
+            
+            <ol type="A">
+                <!-- Ordered list with uppercase letters -->
+                <li>First item (uppercase letters)</li>
+                <li>Second item</li>
+                <li>Third item</li>
+            </ol>
+            
+            <ol type="i">
+                <!-- Ordered list with lowercase roman numerals -->
+                <li>First item (lowercase roman)</li>
+                <li>Second item</li>
+                <li>Third item</li>
+            </ol>
+            
+            <!-- Unordered List with Nested Structure -->
+            <h3>Nested Unordered List</h3>
+            <ul>
+                <!-- Main unordered list -->
+                <li>Web Technologies
+                    <ul>
+                        <!-- Nested unordered list -->
+                        <li>Frontend
+                            <ul>
+                                <!-- Further nested list -->
+                                <li>HTML5</li>
+                                <li>CSS3</li>
+                                <li>JavaScript ES6+</li>
+                            </ul>
+                        </li>
+                        <li>Backend
+                            <ul>
+                                <li>Node.js</li>
+                                <li>Python</li>
+                                <li>PHP</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>Databases
+                    <ul>
+                        <li>MySQL</li>
+                        <li>MongoDB</li>
+                        <li>PostgreSQL</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        
+        <!-- Enhanced Table Section -->
+        <section class="highlight-box">
+            <h2>Advanced Table Features</h2>
+            
+            <table>
+                <!-- Enhanced table with complex structure -->
+                <caption>Web Technology Comparison Table</caption>
+                <!-- Table caption -->
+                
+                <colgroup>
+                    <!-- Column group for styling -->
+                    <col style="background-color: #2a2a2a;">
+                    <!-- First column styling -->
+                    <col span="2" style="background-color: #1a1a1a;">
+                    <!-- Span multiple columns with styling -->
+                </colgroup>
+                
+                <thead>
+                    <!-- Table header -->
+                    <tr>
+                        <th scope="col" rowspan="2">Technology</th>
+                        <!-- Header cell spanning multiple rows -->
+                        <th scope="colgroup" colspan="2">Characteristics</th>
+                        <!-- Header cell spanning multiple columns -->
+                    </tr>
+                    <tr>
+                        <th scope="col">Type</th>
+                        <th scope="col">Primary Use</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    <!-- Table body -->
+                    <tr>
+                        <th scope="row">HTML5</th>
+                        <!-- Row header -->
+                        <td>Markup Language</td>
+                        <td>Structure and content</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">CSS3</th>
+                        <td>Style Sheet Language</td>
+                        <td>Presentation and layout</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">JavaScript</th>
+                        <td>Programming Language</td>
+                        <td>Interactivity and behavior</td>
+                    </tr>
+                </tbody>
+                
+                <tfoot>
+                    <!-- Table footer -->
+                    <tr>
+                        <td colspan="3">Total: 3 core web technologies</td>
+                        <!-- Footer cell spanning all columns -->
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+        
+        <!-- iFrame Section -->
+        <section class="highlight-box">
+            <h2>📱 iFrame Demonstrations</h2>
+            <p>The following examples demonstrate various ways to embed content using the HTML5 iframe element:</p>
+            
+            <!-- Basic iframe example -->
+            <h3>Basic iFrame Example</h3>
+            <p>A simple iframe embedding our demonstration page:</p>
+            <iframe src="iframe-demo.html" 
+                    width="600" 
+                    height="400" 
+                    frameborder="0" 
+                    title="Basic iFrame Demo"
+                    loading="lazy">
+                <!-- Basic iframe with our demo page -->
+                <p>Your browser does not support iframes. <a href="iframe-demo.html">View the content directly</a></p>
+                <!-- Fallback content for unsupported browsers -->
+            </iframe>
+            
+            <!-- Responsive iframe example -->
+            <h3>Responsive iFrame with CSS</h3>
+            <p>An iframe that adapts to different screen sizes:</p>
+            <div style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%; /* 16:9 aspect ratio */">
+                <!-- Responsive container with aspect ratio -->
+                <iframe src="iframe-demo.html" 
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 2px solid green; border-radius: 10px;" 
+                        title="Responsive iFrame Demo"
+                        loading="lazy">
+                    <!-- Responsive iframe styling -->
+                    <p>Your browser does not support iframes. <a href="iframe-demo.html">View the content directly</a></p>
+                </iframe>
+            </div>
+            
+            <!-- Sandbox iframe example -->
+            <h3>Sandboxed iFrame Example</h3>
+            <p>An iframe with security restrictions (sandbox attribute):</p>
+            <iframe src="iframe-demo.html" 
+                    width="600" 
+                    height="300" 
+                    sandbox="allow-scripts allow-same-origin allow-forms" 
+                    style="border: 2px dashed orange; border-radius: 5px;"
+                    title="Sandboxed iFrame Demo"
+                    loading="lazy">
+                <!-- Sandboxed iframe with limited permissions -->
+                <p>Your browser does not support iframes. <a href="iframe-demo.html">View the content directly</a></p>
+            </iframe>
+            <p><small><strong>Sandbox permissions:</strong> allow-scripts, allow-same-origin, allow-forms</small></p>
+            <!-- Explanation of sandbox permissions -->
+            
+            <!-- Seamless iframe example -->
+            <h3>Styled iFrame Integration</h3>
+            <p>An iframe styled to blend with the parent page:</p>
+            <iframe src="iframe-demo.html" 
+                    width="100%" 
+                    height="500" 
+                    style="border: none; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);"
+                    title="Styled iFrame Demo"
+                    loading="lazy">
+                <!-- Iframe with custom styling -->
+                <p>Your browser does not support iframes. <a href="iframe-demo.html">View the content directly</a></p>
+            </iframe>
+            
+            <!-- srcdoc iframe example -->
+            <h3>iFrame with Inline Content (srcdoc)</h3>
+            <p>An iframe using the srcdoc attribute instead of src:</p>
+            <iframe srcdoc="&lt;!DOCTYPE html&gt;
+                           &lt;html&gt;
+                           &lt;head&gt;
+                               &lt;style&gt;
+                                   body { 
+                                       background: linear-gradient(45deg, #ff6b6b, #4ecdc4); 
+                                       color: white; 
+                                       font-family: Arial; 
+                                       text-align: center; 
+                                       padding: 20px; 
+                                       margin: 0;
+                                   }
+                                   .demo-box {
+                                       background: rgba(255,255,255,0.1);
+                                       padding: 20px;
+                                       border-radius: 10px;
+                                       margin: 20px 0;
+                                   }
+                                   button {
+                                       background: #fff;
+                                       color: #333;
+                                       border: none;
+                                       padding: 10px 20px;
+                                       border-radius: 5px;
+                                       cursor: pointer;
+                                       font-weight: bold;
+                                   }
+                               &lt;/style&gt;
+                           &lt;/head&gt;
+                           &lt;body&gt;
+                               &lt;h2&gt;🎯 Inline iFrame Content&lt;/h2&gt;
+                               &lt;div class='demo-box'&gt;
+                                   &lt;p&gt;This content is defined directly in the srcdoc attribute!&lt;/p&gt;
+                                   &lt;p&gt;Current time: &lt;span id='time'&gt;&lt;/span&gt;&lt;/p&gt;
+                                   &lt;button onclick='alert(&quot;Hello from srcdoc iframe!&quot;)'&gt;Click Me&lt;/button&gt;
+                               &lt;/div&gt;
+                               &lt;script&gt;
+                                   setInterval(() =&gt; {
+                                       document.getElementById('time').textContent = new Date().toLocaleTimeString();
+                                   }, 1000);
+                               &lt;/script&gt;
+                           &lt;/body&gt;
+                           &lt;/html&gt;" 
+                    width="100%" 
+                    height="250" 
+                    style="border: 2px solid #4ecdc4; border-radius: 10px;"
+                    title="Inline Content iFrame Demo">
+                <!-- Iframe with inline HTML content -->
+                <p>Your browser does not support the srcdoc attribute.</p>
+            </iframe>
+            
+            <!-- iframe with communication example -->
+            <h3>iFrame Communication Example</h3>
+            <p>An iframe that can communicate with the parent page:</p>
+            <div style="background: rgba(255, 255, 255, 0.05); padding: 15px; border-radius: 10px; margin: 15px 0;">
+                <!-- Container for communication demo -->
+                <button onclick="sendMessageToIframe()" 
+                        style="background: #00ff88; color: black; border: none; padding: 10px 20px; border-radius: 5px; font-weight: bold; cursor: pointer; margin: 5px;">
+                    Send Message to iFrame
+                </button>
+                <!-- Button to send message to iframe -->
+                <button onclick="changeIframeTheme()" 
+                        style="background: #ff6b6b; color: white; border: none; padding: 10px 20px; border-radius: 5px; font-weight: bold; cursor: pointer; margin: 5px;">
+                    Change iFrame Theme
+                </button>
+                <!-- Button to change iframe theme -->
+                <div id="iframe-messages" style="background: rgba(0, 0, 0, 0.3); padding: 10px; border-radius: 5px; margin: 10px 0; min-height: 50px;">
+                    <!-- Area to display iframe messages -->
+                    <p><small>Messages from iframe will appear here...</small></p>
+                </div>
+            </div>
+            
+            <iframe id="communication-iframe" 
+                    src="iframe-demo.html" 
+                    width="100%" 
+                    height="600" 
+                    style="border: 2px solid #00ff88; border-radius: 10px;"
+                    title="Communication iFrame Demo"
+                    loading="lazy">
+                <!-- Iframe for communication demonstration -->
+                <p>Your browser does not support iframes. <a href="iframe-demo.html">View the content directly</a></p>
+            </iframe>
+            
+            <!-- JavaScript for iframe communication -->
+            <script>
+                // JavaScript functions for iframe communication demonstrations
+                
+                function sendMessageToIframe() {
+                    // Function to send message to iframe
+                    const iframe = document.getElementById('communication-iframe');
+                    const message = {
+                        type: 'parentMessage',
+                        data: 'Hello from parent page!',
+                        timestamp: new Date().toISOString()
+                    };
+                    iframe.contentWindow.postMessage(message, '*');
+                    // Send message to iframe content window
+                    
+                    // Update message display
+                    const messageDiv = document.getElementById('iframe-messages');
+                    messageDiv.innerHTML += `<p style="color: #90EE90; margin: 5px 0;"><strong>Sent:</strong> ${message.data}</p>`;
+                    // Display sent message
+                }
+                
+                function changeIframeTheme() {
+                    // Function to change iframe theme
+                    const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57', '#ff9ff3'];
+                    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                    
+                    const iframe = document.getElementById('communication-iframe');
+                    const message = {
+                        type: 'changeTheme',
+                        color: randomColor
+                    };
+                    iframe.contentWindow.postMessage(message, '*');
+                    // Send theme change message to iframe
+                    
+                    // Update message display
+                    const messageDiv = document.getElementById('iframe-messages');
+                    messageDiv.innerHTML += `<p style="color: #87CEEB; margin: 5px 0;"><strong>Theme changed to:</strong> ${randomColor}</p>`;
+                    // Display theme change message
+                }
+                
+                // Listen for messages from iframe
+                window.addEventListener('message', function(event) {
+                    // Function to handle messages from iframe
+                    if (event.data && event.data.type === 'iframeReady') {
+                        const messageDiv = document.getElementById('iframe-messages');
+                        messageDiv.innerHTML += `<p style="color: #FFD700; margin: 5px 0;"><strong>Received:</strong> ${event.data.message}</p>`;
+                        // Display iframe ready message
+                    }
+                });
+            </script>
+            
+            <!-- iframe accessibility notes -->
+            <div style="background: rgba(255, 200, 0, 0.1); border: 2px solid rgba(255, 200, 0, 0.5); padding: 15px; border-radius: 10px; margin: 20px 0;">
+                <!-- Accessibility information box -->
+                <h4>♿ iFrame Accessibility Best Practices</h4>
+                <ul style="text-align: left; color: #FFFF88;">
+                    <!-- Best practices list -->
+                    <li><strong>title attribute:</strong> Always provide a descriptive title for screen readers</li>
+                    <li><strong>loading attribute:</strong> Use loading="lazy" for performance optimization</li>
+                    <li><strong>Fallback content:</strong> Provide alternative content for unsupported browsers</li>
+                    <li><strong>Sandbox security:</strong> Use sandbox attribute to restrict iframe capabilities</li>
+                    <li><strong>Responsive design:</strong> Ensure iframes work on all device sizes</li>
+                    <li><strong>Focus management:</strong> Consider keyboard navigation and focus handling</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Footer section for copyright and links -->
+        <p>Copyright &copy; 2026. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
